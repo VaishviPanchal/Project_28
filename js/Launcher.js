@@ -5,7 +5,7 @@ class Launcher
 			bodyA : bodyA,
             pointB : bodyB,
             length : 50,
-            stiffness : 13,	
+            stiffness : 0.05,	
 		}
 		this.body=Constraint.create(options);
  		World.add(world,this.body);
