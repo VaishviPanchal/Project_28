@@ -42,7 +42,7 @@ function setup() {
 
 	treeObj=new tree(1050,580);
 	groundObject=new ground(width/2,600,width,20);
-  //launcher =new Launcher(stoneObj.body,{x:235,y:420});
+  launcher =new Launcher(stoneObj.body,{x:235,y:420});
   //create launcherObject here
 
 
@@ -72,7 +72,7 @@ function draw() {
   mango12.display();
   groundObject.display();
   // display launcher object here
-  launcher = new Launcher(stoneObj.body,{x:235,y:420});
+  //launcher = new Launcher(stoneObj.body,{x:235,y:420});
   launcher.display();  
 
 
@@ -99,13 +99,14 @@ function mouseDragged(){
 //create mouseReleased function here
 function mouseReleased(){
   launcher.fly();
-  Matter.Body.applyForce(stoneObj.body,stoneObj.body.position,{x:10,y:-20})
+  Matter.Body.applyForce(stoneObj.body,stoneObj.body.position,{x:1,y:-2})
 }
 
 //create keyPressed function here
 function keyPressed(){
   if (keyCode===32){
-    Matter.setPosition(stoneObj.body,{x:235,y:420})
+    console.log("Space key Pressed");
+    Matter.Body.setPosition(stoneObj.body,{x:235,y:420})
     launcher.attach(stoneObj.body);
   }
 }
